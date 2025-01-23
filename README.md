@@ -20,6 +20,20 @@ Este projeto consiste na automação de testes frontend utilizando Cypress para 
 - **Quando** o usuário tentar fazer login com uma senha inválida
 - **Então** a página deve exibir uma mensagem de erro indicando falha na autenticação.
 
+## 🔐 Credenciais de Teste
+
+Para executar os testes, é necessário utilizar credenciais válidas no site Automation Practice. O projeto utiliza um email temporário gerado através do serviço temp-mail.org.
+
+### Como gerar novas credenciais
+1. Acesse [temp-mail.org](https://temp-mail.org)
+2. Gere um novo email temporário
+3. Crie uma nova conta no [Automation Practice](http://automationpractice.pl/) usando o email temporário
+4. Atualize as credenciais no arquivo `cypress/fixtures/test-credentials.js`
+
+### ⚠️ Observações
+- As credenciais atuais são temporárias e podem expirar
+- Para execução local dos testes, você pode precisar gerar suas próprias credenciais
+
 ## 🛠️ Tecnologias Utilizadas
 - [Cypress](https://www.cypress.io/)
 - JavaScript
@@ -65,6 +79,8 @@ technical-challenge-qa-intern/
 │   │       ├── login_invalid_email.spec.cy.js
 │   │       ├── login_successfully.spec.cy.js
 │   │       └── login_invalid_password.spec.cy.js
+│   ├── fixtures/
+│   │   └── test-credentials.js
 │   └── support/
 │       ├── commands.js
 │       └── e2e.js
