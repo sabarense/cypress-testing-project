@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 
+import { TEST_CREDENTIALS } from '../../fixtures/test-credentials.js';
+
 describe("Teste de autenticação com credenciais válidas", () => {
   const url = "http://www.automationpractice.pl/index.php?controller=authentication&back=my-account";
   const authenticatedUrl = "http://www.automationpractice.pl/index.php?controller=my-account";
-  const email = "rewaf75013@halbov.com";
-  const password = "teste";
+  const { email, password } = TEST_CREDENTIALS;
 
   beforeEach(() => {
     cy.visit(url);
