@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
 
+import { TEST_CREDENTIALS } from '../../fixtures/test-credentials.js';
+
 describe("Teste de autenticação com senha inválida", () => {
     const url = "http://www.automationpractice.pl/index.php?controller=authentication&back=my-account";
-    const email = "rewaf75013@halbov.com";
-    const password = "teste1";
+    const { email, password, wrongPassword } = TEST_CREDENTIALS;
   
     beforeEach(() => {
       cy.visit(url);
@@ -24,7 +25,7 @@ describe("Teste de autenticação com senha inválida", () => {
     it("Deve exibir mensagem de erro ao tentar realizar o login com senha inválida", () => {
       cy.get("@loginForm").within(() => {
         cy.get("#email").type(email);
-        cy.get("#passwd").type(password);
+        cy.get("#passwd").type(wrongPassword);
         cy.get("#SubmitLogin").click();
       });
   
@@ -38,7 +39,7 @@ describe("Teste de autenticação com senha inválida", () => {
   
         cy.get('@loginForm').should('be.visible')
         cy.get('#email').should('have.value', email)
-        cy.get('#passwd').should('have.value', password)
+        cy.get('#passwd').should('have.value', wrongPassword)
     });
   });
   
