@@ -1,4 +1,4 @@
-# Desafio Técnico QA (Estágio)
+# Desafio Técnico QA
 
 ## 📝 Sobre o Projeto
 Este projeto consiste na automação de testes frontend utilizando Cypress para validar funcionalidades de autenticação no site [Automation Practice](http://automationpractice.com). Foi desenvolvido como parte de um desafio técnico para uma vaga de estágio em QA.
